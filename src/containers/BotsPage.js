@@ -1,6 +1,7 @@
 import React from "react";
 import BotCollection from './BotCollection';
 import YourBotArmy from './YourBotArmy';
+import BotSpecs from '../components/BotSpecs';
 
 class BotsPage extends React.Component {
   state = {
@@ -37,7 +38,7 @@ class BotsPage extends React.Component {
     return (
       <div>
 
-        <BotCollection onClick={this.onClickAdd} bots={this.state.bots} />
+        {this.state.botsArmy.length > 0 ? <BotSpecs onClick={this.onClickAdd} bots={this.state.botsArmy}/> : <BotCollection onClick={this.onClickAdd} bots={this.state.bots} />}
         <YourBotArmy onClick={this.onClickRemove} bots={this.state.botsArmy}/>
         {/* put your components here */}
       </div>
